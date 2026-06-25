@@ -1,0 +1,635 @@
+{
+    "mcpServers": {
+        "AWS API MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.aws-api-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_REGION": "us-east-1"
+            },
+            "type": "stdio"
+        },
+        "aws-knowledge-mcp": {
+            "type": "http",
+            "url": "https://knowledge-mcp.global.api.aws"
+        },
+        "AWS Documentation MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.aws-documentation-mcp-server@latest"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR",
+                "AWS_DOCUMENTATION_PARTITION": "aws"
+            },
+            "type": "stdio"
+        },
+        "Infrastructure as Code MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.aws-iac-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-named-profile",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "AWS Cloud Control API MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.ccapi-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "EKS MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.eks-mcp-server@latest",
+                "--allow-write",
+                "--allow-sensitive-data-access"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "ECS MCP Server": {
+            "command": "uvx",
+            "args": [
+                "--from",
+                "awslabs-ecs-mcp-server",
+                "ecs-mcp-server"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "your-aws-region",
+                "FASTMCP_LOG_LEVEL": "ERROR",
+                "FASTMCP_LOG_FILE": "/path/to/ecs-mcp-server.log",
+                "ALLOW_WRITE": "false",
+                "ALLOW_SENSITIVE_DATA": "false"
+            },
+            "type": "stdio"
+        },
+        "Finch MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.finch-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "default",
+                "AWS_REGION": "us-west-2",
+                "FASTMCP_LOG_LEVEL": "INFO"
+            },
+            "type": "stdio"
+        },
+        "AWS Lambda Tool MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.lambda-tool-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1",
+                "FUNCTION_PREFIX": "your-function-prefix",
+                "FUNCTION_LIST": "your-first-function, your-second-function",
+                "FUNCTION_TAG_KEY": "your-tag-key",
+                "FUNCTION_TAG_VALUE": "your-tag-value",
+                "FUNCTION_INPUT_SCHEMA_ARN_TAG_KEY": "your-function-tag-for-input-schema"
+            },
+            "type": "stdio"
+        },
+        "Step Functions Tool MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.stepfunctions-tool-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1",
+                "STATE_MACHINE_PREFIX": "your-state-machine-prefix",
+                "STATE_MACHINE_LIST": "your-first-state-machine, your-second-state-machine",
+                "STATE_MACHINE_TAG_KEY": "your-tag-key",
+                "STATE_MACHINE_TAG_VALUE": "your-tag-value",
+                "STATE_MACHINE_INPUT_SCHEMA_ARN_TAG_KEY": "your-state-machine-tag-for-input-schema"
+            },
+            "type": "stdio"
+        },
+        "AWS Serverless MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.aws-serverless-mcp-server@latest",
+                "--allow-write",
+                "--allow-sensitive-data-access"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1"
+            },
+            "type": "stdio"
+        },
+        "AWS Support MCP Server": {
+            "command": "uvx",
+            "args": [
+                "-m",
+                "awslabs.aws-support-mcp-server@latest",
+                "--debug",
+                "--log-file",
+                "./logs/mcp_support_server.log"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile"
+            },
+            "type": "stdio"
+        },
+        "Bedrock KB Retrieval MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.bedrock-kb-retrieval-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-profile-name",
+                "AWS_REGION": "us-east-1",
+                "FASTMCP_LOG_LEVEL": "ERROR",
+                "KB_INCLUSION_TAG_KEY": "optional-tag-key-to-filter-kbs",
+                "BEDROCK_KB_RERANKING_ENABLED": "false"
+            },
+            "type": "stdio"
+        },
+        "Amazon Q Index MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.amazon-qindex-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_REGION": "us-east-1",
+                "QINDEX_ID": "your-qindex-id",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "Amazon Q Business Anonymous MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.amazon-qbusiness-anonymous-mcp-server@latest"
+            ],
+            "env": {
+                "QBUSINESS_APP_ID": "your-qbusiness-app-id",
+                "QBUSINESS_USER_ID": "your-user-id",
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "Bedrock AgentCore MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.amazon-bedrock-agentcore-mcp-server@latest"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "SageMaker AI MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.sagemaker-ai-mcp-server@latest",
+                "--allow-write",
+                "--allow-sensitive-data-access"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "DocumentDB MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.documentdb-mcp-server@latest"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR",
+                "AWS_PROFILE": "your-aws-profile"
+            },
+            "type": "stdio"
+        },
+        "DynamoDB MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.dynamodb-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "default",
+                "AWS_REGION": "us-west-2",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "ElastiCache MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.elasticache-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "default",
+                "AWS_REGION": "us-west-2",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "Valkey MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.valkey-mcp-server@latest"
+            ],
+            "env": {
+                "VALKEY_HOST": "127.0.0.1",
+                "VALKEY_PORT": "6379",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "Memcached MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.memcached-mcp-server@latest"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR",
+                "MEMCACHED_HOST": "your-memcached-host",
+                "MEMCACHED_PORT": "11211"
+            },
+            "type": "stdio"
+        },
+        "Timestream for InfluxDB MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.timestream-for-influxdb-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "Amazon Keyspaces MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.amazon-keyspaces-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "Amazon Neptune MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.amazon-neptune-mcp-server@latest"
+            ],
+            "env": {
+                "NEPTUNE_ENDPOINT": "https://your-neptune-cluster-id.region.neptune.amazonaws.com:8182",
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "Aurora DSQL MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.aurora-dsql-mcp-server@latest",
+                "--cluster_endpoint",
+                "[your dsql cluster endpoint]",
+                "--region",
+                "[your dsql cluster region, e.g. us-east-1]",
+                "--database_user",
+                "[your dsql username]",
+                "--profile",
+                "default"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "PostgreSQL MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.postgres-mcp-server@latest",
+                "--connection-string",
+                "postgresql://[username]:[password]@[host]:[port]/[database]"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "AWS Data Processing MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.aws-dataprocessing-mcp-server@latest",
+                "--allow-write"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR",
+                "AWS_REGION": "us-east-1"
+            },
+            "type": "stdio"
+        },
+        "Redshift MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.redshift-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "default",
+                "AWS_REGION": "us-east-1",
+                "FASTMCP_LOG_LEVEL": "INFO"
+            },
+            "type": "stdio"
+        },
+        "S3 Tables MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.s3-tables-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1"
+            },
+            "type": "stdio"
+        },
+        "AWS AppSync MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.aws-appsync-mcp-server@latest",
+                "--allow-write"
+            ],
+            "env": {
+                "AWS_PROFILE": "default",
+                "AWS_REGION": "us-east-1",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "AWS IoT SiteWise MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.aws-iot-sitewise-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_REGION": "us-east-1",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "sagemaker-unified-studio-mcp-troubleshooting": {
+            "command": "uvx",
+            "args": [
+                "mcp-proxy-for-aws@latest",
+                "https://sagemaker-unified-studio-mcp.us-east-1.api.aws/spark-troubleshooting/mcp",
+                "--service",
+                "sagemaker-unified-studio-mcp",
+                "--profile",
+                "smus-mcp-profile",
+                "--region",
+                "us-east-1",
+                "--read-timeout",
+                "180"
+            ],
+            "type": "stdio"
+        },
+        "sagemaker-unified-studio-mcp-code-rec": {
+            "command": "uvx",
+            "args": [
+                "mcp-proxy-for-aws@latest",
+                "https://sagemaker-unified-studio-mcp.us-east-1.api.aws/spark-code-recommendation/mcp",
+                "--service",
+                "sagemaker-unified-studio-mcp",
+                "--profile",
+                "smus-mcp-profile",
+                "--region",
+                "us-east-1",
+                "--read-timeout",
+                "180"
+            ],
+            "type": "stdio"
+        },
+        "spark-upgrade": {
+            "command": "uvx",
+            "args": [
+                "mcp-proxy-for-aws@latest",
+                "https://sagemaker-unified-studio-mcp.us-east-1.api.aws/spark-upgrade/mcp",
+                "--service",
+                "sagemaker-unified-studio-mcp",
+                "--profile",
+                "spark-upgrade-profile",
+                "--region",
+                "us-east-1",
+                "--read-timeout",
+                "180"
+            ],
+            "type": "stdio"
+        },
+        "OpenAPI MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.openapi-mcp-server@latest"
+            ],
+            "env": {
+                "API_NAME": "your-api-name",
+                "API_BASE_URL": "https://api.example.com",
+                "API_SPEC_URL": "https://api.example.com/openapi.json",
+                "LOG_LEVEL": "ERROR",
+                "ENABLE_PROMETHEUS": "false",
+                "ENABLE_OPERATION_PROMPTS": "true",
+                "UVICORN_TIMEOUT_GRACEFUL_SHUTDOWN": "5.0",
+                "UVICORN_GRACEFUL_SHUTDOWN": "true"
+            },
+            "type": "stdio"
+        },
+        "Prometheus MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.prometheus-mcp-server@latest",
+                "--url",
+                "https://aps-workspaces.us-east-1.amazonaws.com/workspaces/ws-<Workspace ID>",
+                "--region",
+                "<Your AWS Region>",
+                "--profile",
+                "<Your CLI Profile [default] if no profile is used>"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "DEBUG",
+                "AWS_PROFILE": "<Your CLI Profile [default] if no profile is used>"
+            },
+            "type": "stdio"
+        },
+        "AWS IAM MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.iam-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "Amazon Kendra Index MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.amazon-kendra-index-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_REGION": "us-east-1",
+                "KEND_INDEX_ID": "your-kendra-index-id",
+                "KEND_ROLE_ARN": "your-kendra-role-arn",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "AWS Location MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.aws-location-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "Amazon MQ MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.amazon-mq-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "Amazon SNS/SQS MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.amazon-sns-sqs-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1"
+            },
+            "type": "stdio"
+        },
+        "AWS Pricing MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.aws-pricing-mcp-server@latest"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR",
+                "AWS_PROFILE": "default",
+                "AWS_REGION": "us-east-1"
+            },
+            "type": "stdio"
+        },
+        "CloudWatch MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.cloudwatch-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "[The AWS Profile Name to use for AWS access]",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "applicationsignals": {
+            "command": "uvx",
+            "args": [
+                "awslabs.cloudwatch-applicationsignals-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "[The AWS Profile Name to use for AWS access]",
+                "AWS_REGION": "[The AWS region to run in]",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "AWS Well-Architected Security Assessment Tool MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.well-architected-security-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "CloudTrail MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.cloudtrail-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_PROFILE": "[The AWS Profile Name to use for AWS access]",
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "type": "stdio"
+        },
+        "AWS Billing and Cost Management MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.billing-cost-management-mcp-server@latest"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR",
+                "AWS_PROFILE": "your-aws-profile",
+                "AWS_REGION": "us-east-1"
+            },
+            "type": "stdio"
+        },
+        "AWS HealthOmics MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.aws-healthomics-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_REGION": "us-east-1",
+                "AWS_PROFILE": "your-profile",
+                "FASTMCP_LOG_LEVEL": "WARNING"
+            },
+            "type": "stdio"
+        },
+        "AWS HealthLake MCP Server": {
+            "command": "uvx",
+            "args": [
+                "awslabs.healthlake-mcp-server@latest"
+            ],
+            "env": {
+                "AWS_REGION": "us-east-1",
+                "AWS_PROFILE": "your-profile",
+                "MCP_LOG_LEVEL": "WARNING"
+            },
+            "type": "stdio"
+        }
+    }
+}
